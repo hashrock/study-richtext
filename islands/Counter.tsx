@@ -3,13 +3,16 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import {
   createEditor,
   Descendant,
+  Editor,
 } from "https://esm.sh/slate";
 import {
   Editable,
   Slate,
+  useFocused,
+  useSlate,
   withReact,
 } from "https://esm.sh/slate-react?alias=react:preact/compat,react-dom:preact/compat,@types/react:preact/compat&external=preact";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import { RouteConfig } from "$fresh/server.ts";
 
 interface CounterProps {
